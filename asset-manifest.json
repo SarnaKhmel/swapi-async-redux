@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/swapi-async-redux/static/css/main.ba07a96f.css",
+    "main.js": "/swapi-async-redux/static/js/main.6e41e34f.js",
+    "static/js/787.a2a20c5b.chunk.js": "/swapi-async-redux/static/js/787.a2a20c5b.chunk.js",
+    "index.html": "/swapi-async-redux/index.html",
+    "main.ba07a96f.css.map": "/swapi-async-redux/static/css/main.ba07a96f.css.map",
+    "main.6e41e34f.js.map": "/swapi-async-redux/static/js/main.6e41e34f.js.map",
+    "787.a2a20c5b.chunk.js.map": "/swapi-async-redux/static/js/787.a2a20c5b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba07a96f.css",
+    "static/js/main.6e41e34f.js"
+  ]
+}
