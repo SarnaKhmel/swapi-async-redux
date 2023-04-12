@@ -41,3 +41,20 @@
 li {
   list-style-type: none;
 }
+
+.subinfo {
+  height: 50px;
+  width: 60vh;
+}
+
+.btn {
+  padding: 5px;
+  margin: 5px;
+  height: 30px;
+  width: 60px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+}

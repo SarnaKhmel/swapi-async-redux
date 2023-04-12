@@ -3,10 +3,11 @@ import axios from "axios";
 
 export const fetchPlanets = createAsyncThunk(
   "planets/fetchPlanets",
-  async function (_, { rejectWithValue, getState }) {
+  async function (param, { rejectWithValue, getState }) {
+    if (param === "") param = "planets";
     const id = getState().planets.page;
     try {
-      const response = await axios.get(`https://swapi.dev/api/planets/${id}`);
+      const response = await axios.get(`https://swapi.dev/api/${param}/${id}`);
       if (response.status !== 200) throw new Error(response.statusText);
       const data = response.data;
       return data;
@@ -27,12 +28,13 @@ const planetSlice = createSlice({
 
   reducers: {
     increment(state) {
-      if (state.page <= 0 && state.page >= 60) state.page = 1;
       state.page++;
     },
     decrement(state) {
-      if (state.page <= 0 && state.page >= 60) state.page = 1;
       state.page--;
+    },
+    init(state) {
+      state.page = 1;
     },
   },
 
@@ -52,5 +54,5 @@ const planetSlice = createSlice({
   },
 });
 
-export const { increment, decrement } = planetSlice.actions;
+export const { increment, decrement, init } = planetSlice.actions;
 export default planetSlice.reducer;

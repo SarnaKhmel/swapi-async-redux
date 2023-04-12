@@ -3,42 +3,79 @@ import { fetchPlanets } from "./redux/slice";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Planet from "./components/Planet";
-import { increment, decrement } from "./redux/slice";
+import People from "./components/People";
+import { increment, decrement, init } from "./redux/slice";
 const App = () => {
   const dispatch = useDispatch();
-  const [page, setPage] = useState(0);
+  const [paramLocal, setParam] = useState("");
+  const number = useSelector((state) => state.planets.page);
 
   useEffect(() => {
-    dispatch(fetchPlanets());
-  }, [dispatch, page]);
+    dispatch(fetchPlanets(paramLocal));
+  }, [dispatch, number]);
 
   const data = useSelector((state) => state.planets.data);
-  const number = useSelector((state) => state.planets.page);
   const { status, error } = useSelector((state) => state.planets);
-  // console.log(data);
 
   const handlerIncrement = () => {
     dispatch(increment());
-    if (number <= 0 && number >= 60) setPage(1);
   };
   const handlerDecrement = () => {
     dispatch(decrement());
-    if (number <= 0 && number >= 60) setPage(1);
-    setPage(number);
   };
+
+  const handlerChangeParam = (e) => {
+    const param = e.target.textContent;
+    if (paramLocal !== param) {
+      setParam(param);
+      dispatch(fetchPlanets(param));
+      dispatch(init());
+    }
+  };
+
+  const switchParam = () => {
+    switch (paramLocal) {
+      case "planets":
+        return <Planet {...data} />;
+      case "people":
+        return <People {...data} />;
+      default: {
+        return <Planet {...data} />;
+      }
+    }
+  };
+
+  console.log(data);
   return (
     <div className="App">
-      <div className="navBar"></div>
+      <div className="navBar">
+        <button className="btn" onClick={handlerChangeParam}>
+          planets
+        </button>
+        <button className="btn" onClick={handlerChangeParam}>
+          people
+        </button>
+      </div>
       <div className="info">
-        <h2>Planet:</h2>
-
-        {status === "loading" && <h1>Loading ...</h1>}
-        {error && <h2> ERRROR: {error}</h2>}
-        <Planet {...data} />
+        <div className="subinfo">
+          {status === "loading" && <h1>Loading ...</h1>}
+          {error && <h2> ERRROR: {error}</h2>}
+        </div>
+        {switchParam()}
         <div className="btnBlock">
-          <button onClick={handlerDecrement}>-</button>
+          <button
+            className="btn"
+            disabled={number === 1}
+            onClick={handlerDecrement}>
+            -
+          </button>
           {number}
-          <button onClick={handlerIncrement}>+</button>
+          <button
+            className="btn"
+            disabled={number === 10}
+            onClick={handlerIncrement}>
+            +
+          </button>
         </div>
       </div>
     </div>
