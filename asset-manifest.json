@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/swapi-async-redux/static/css/main.ba07a96f.css",
-    "main.js": "/swapi-async-redux/static/js/main.c544bf3f.js",
+    "main.css": "/swapi-async-redux/static/css/main.f562f70e.css",
+    "main.js": "/swapi-async-redux/static/js/main.10d90e3f.js",
     "static/js/787.a2a20c5b.chunk.js": "/swapi-async-redux/static/js/787.a2a20c5b.chunk.js",
     "index.html": "/swapi-async-redux/index.html",
-    "main.ba07a96f.css.map": "/swapi-async-redux/static/css/main.ba07a96f.css.map",
-    "main.c544bf3f.js.map": "/swapi-async-redux/static/js/main.c544bf3f.js.map",
+    "main.f562f70e.css.map": "/swapi-async-redux/static/css/main.f562f70e.css.map",
+    "main.10d90e3f.js.map": "/swapi-async-redux/static/js/main.10d90e3f.js.map",
     "787.a2a20c5b.chunk.js.map": "/swapi-async-redux/static/js/787.a2a20c5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba07a96f.css",
-    "static/js/main.c544bf3f.js"
+    "static/css/main.f562f70e.css",
+    "static/js/main.10d90e3f.js"
   ]
 }
