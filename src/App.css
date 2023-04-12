@@ -10,3 +10,34 @@
   color: white;
   font-family: "Muli", sans-serif;
 }
+
+.info {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  width: 500px;
+  min-height: 60px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.navBar {
+  min-height: 60px;
+  width: 500px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.btnBlock {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+}
+
+li {
+  list-style-type: none;
+}

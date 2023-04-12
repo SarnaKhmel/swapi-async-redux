@@ -6,7 +6,7 @@ export const fetchPlanets = createAsyncThunk(
   async function (_, { rejectWithValue, getState }) {
     const id = getState().planets.page;
     try {
-      const response = await axios.get(`https://swapi.dev/api/plqanets/${id}`);
+      const response = await axios.get(`https://swapi.dev/api/planets/${id}`);
       if (response.status !== 200) throw new Error(response.statusText);
       const data = response.data;
       return data;
@@ -27,9 +27,11 @@ const planetSlice = createSlice({
 
   reducers: {
     increment(state) {
+      if (state.page <= 0 && state.page >= 60) state.page = 1;
       state.page++;
     },
     decrement(state) {
+      if (state.page <= 0 && state.page >= 60) state.page = 1;
       state.page--;
     },
   },
