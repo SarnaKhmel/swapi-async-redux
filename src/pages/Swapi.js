@@ -1,11 +1,11 @@
-import "./App.css";
-import { fetchPlanets } from "./redux/slice";
+import { fetchPlanets } from "../redux/slice";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Planet from "./components/Planet";
-import People from "./components/People";
-import { increment, decrement, init } from "./redux/slice";
-const App = () => {
+import Planet from "../components/Planet";
+import People from "../components/People";
+import { increment, decrement, init } from "../redux/slice";
+
+const Swapi = () => {
   const dispatch = useDispatch();
   const [paramLocal, setParam] = useState("");
   const number = useSelector((state) => state.planets.page);
@@ -47,7 +47,7 @@ const App = () => {
 
   console.log(data);
   return (
-    <div className="App">
+    <div className="swapi">
       <div className="navBar">
         <button className="btn" onClick={handlerChangeParam}>
           planets
@@ -62,6 +62,7 @@ const App = () => {
           {error && <h2> ERRROR: {error}</h2>}
         </div>
         {switchParam()}
+
         <div className="btnBlock">
           <button
             className="btn"
@@ -82,4 +83,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Swapi;

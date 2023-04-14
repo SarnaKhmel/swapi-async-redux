@@ -32,6 +32,29 @@
   margin: 10px;
 }
 
+.navTopBar {
+  height: 50px;
+  width: 500px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  height: 30px;
+  width: 60px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+}
+
 .btnBlock {
   display: flex;
   padding: 10px;
@@ -52,6 +75,16 @@ li {
   margin: 5px;
   height: 30px;
   width: 60px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+}
+
+form {
+  padding: 5px;
+  margin: 5px;
   border: 1px solid white;
   border-radius: 5px;
   text-align: center;
